@@ -32,12 +32,11 @@ This entry-level tutorial walks the user through the creation of a desktop PC an
 </br> </br> 
 ![Part1_2 READY](https://github.com/user-attachments/assets/218f3016-c4f2-46c6-a60b-0ac39f032c6c)
 
-
-- We’ll need to create a Resource Group. A resource group is like a “container” for our project. Select “Create new” and choose a name for your “group”. 
+- We’ll need to create a <i>Resource Group</i>. A resource group is like a “container” for our project. Select “Create new” and choose a name for your “group”. 
 
 - Next, choose a name for your VN. 
 
-- Choose the Region in which your project will be stored. You may have to play around with the region to find one that will allow you to create the type of project you’re working on. Regardless of which region you choose, you’ll want to use the same region for each resource you create.
+- Choose the <i>Region</i> in which your project will be stored. You may have to play around with the region to find one that will allow you to create the type of project you’re working on. Regardless of which region you choose, you’ll want to use the same region for each resource you create.
 
 - This is all we need to configure at this point. Select “Review + create”. It will show you an overview of some of the details of your new network. Click “Create” and allow it to deploy.
 
@@ -46,13 +45,13 @@ This entry-level tutorial walks the user through the creation of a desktop PC an
 ![Part1_4 READY](https://github.com/user-attachments/assets/373bfeca-c492-44fb-8ac5-1611fbe23e6e)
 </br>
 
-<h2>Part 2: Create our <i></i>Virtual Machines</i>. </h2>
+<h2>Part 2: Create the Virtual Machines. </h2>
 
-<h4>Next, we’ll create our first VM, which will be our “Domain Controller” running Windows Server 2022</h4>
+<h4>Next, we’ll create our first VM, which will run Windows Server 2022</h4>
 
-- Go back to the All Services page and select the Virtual Machines icon (you can also search “virtual machines” in the search box at the top). 
+- Go back to the "All Services" page and select the "Virtual Machines" icon (you can also search “virtual machines” in the search box at the top). 
 
-- From the Virtual Machines page, choose “Create” and then select “Azure virtual machine” from the drop-down menu. 
+- From the "Virtual Machines" page, choose “Create” and then select “Azure virtual machine” from the drop-down menu. 
 
 ![Part2_1 READY](https://github.com/user-attachments/assets/006d1936-0c1d-4143-ac4d-d5347f1456d1)
 
@@ -60,18 +59,18 @@ This entry-level tutorial walks the user through the creation of a desktop PC an
 
 ![Part2_2 READY](https://github.com/user-attachments/assets/6b1caae5-03db-449c-b208-1bdad5cde440)
 
-- For the “Image”, we’re going to select “Windows Server 2022”. For “Size”, choose a setting with at least 2 vcpu’s and 8 GiB’s of RAM. 
+- For the “Image”, we’re going to select “Windows Server 2022”. For “Size”, choose a setting with at least <i>2 vcpu’s</i> and <i>8 GiB’s of RAM</i>. 
 
 - Create a “username” and “password” for the machine. 
 
 - At the bottom, choose “Next: Disks”. Leave the “disks” page as is and choose “Next: Networking”.
 
 - On the networking page, make sure the correct “virtual network” is selected. Then scroll down and make sure “Delete public IP and NIC…” is checked. Leave everything else as is and select “Review + create”. 
-If it passes Validation, choose “Create”.
+If it passes validation, choose “Create”.
 
 ![Part2_3 READY](https://github.com/user-attachments/assets/cd95bc79-f471-4388-aa3f-1a3793a0596c)
 
-<h4>Before we create our second VM, let’s set the server’s private IP address to static.</h4>
+<h4>Before we create the second VM, let’s set the server’s <i>private IP address</i>i> to "static".</h4>
 
 - On the VM page, open to your server's dashboard.
 
@@ -83,11 +82,11 @@ If it passes Validation, choose “Create”.
 
 ![Part2_5 READY](https://github.com/user-attachments/assets/a1211e80-402d-4f41-906e-89b536401dae)
 
-- Choose the link titled “ipconfig1”. Change “Private IP” to static and save.
+- Choose the link titled “ipconfig1”. Change “Private IP” to <i>static</i> and save.
 
 ![Part2_6 READY](https://github.com/user-attachments/assets/7ba1218b-b1e3-4d0b-a69f-1bdfda56dedc)
 
-- Next, we’re going to login to our new VM using Remote Desktop (RDP) and disable Windows Firewall. To do this, you'll need the server's public IP address (you’ll find this on the VM’s main page in Azure). 
+- Next, we’re going to login to our new VM using <i>Remote Desktop</i> (RDP) and disable <i>Windows Firewall</i>. To do this, you'll need the server's public IP address (you’ll find this on the VM’s main page in Azure). 
 
 ![Part2_6 5 READY](https://github.com/user-attachments/assets/792e502c-74ba-451c-a971-aa46357e1966)
 
@@ -96,30 +95,30 @@ If it passes Validation, choose “Create”.
 ![Part2_7 READY](https://github.com/user-attachments/assets/bb65ea65-3c5a-4971-8d7e-c86ca4818a99)
 
 
-- Open the firewall. To do this, right-click on the start button of the VM and choose “Run”. Type wf.msc and “ok”. 
+- Open the firewall. To do this, right-click on the start button of the VM and choose “Run”. Type "wf.msc" and “ok”. 
 
 ![Part2_8 READY](https://github.com/user-attachments/assets/f64c7c68-0d11-42a6-ac49-53a165c93cae)
 
-- Choose “Properties” from the menu on the right. On the window that pops up, on the first 3 tabs (Domain Profile, Private Profile, Public Profile), set “Firewall State” to “Off”. Select “Apply” and “Ok”.
+- Choose “Properties” from the menu on the right. On the window that pops up, on the <i>first three</i> tabs ("Domain Profile", "Private Profile", "Public Profile"), set “Firewall State” to “Off”. Select “Apply” and “Ok”.
 
 ![Part2_9 READY](https://github.com/user-attachments/assets/7cb2761e-6fb7-473c-82b1-cd9da33a8b4d)
 </br></br>
 ![Part2_10 READY](https://github.com/user-attachments/assets/5146c94a-57fb-43ed-af3c-cdcd10549500)
 
 
-<h2>Part 3: Create our second VM, which will be our “Client”, running Windows 10, and configure the DNS.</h2>
+<h2>Part 3: Create the second VM, which will be the “Client”, running Windows 10, and configure the DNS.</h2>
 
-<h4>The process is the same as the set up for the server. </h4>
+<h4>The process to create this machine is essentially the same as the set up for the server. </h4>
 
-- Go to Virtual Machines and create a new one.
+- Go to "Virtual Machines" and create a new one.
 
-- This time, for the “Image”, choose Windows 10 Pro. For “Size”, choose the same for the server. Make sure you’re in the same Resource Group and region. 
+- This time, for the “Image”, choose <i>Windows 10 Pro</i>. For “Size”, choose the same for the server. Make sure you’re in the same Resource Group and region. 
 
 - At the bottom of the page, be sure to check the box, “I confirm I have an eligible Windows 10/11 license…”. 
 
 - Click through to “Networking” and make sure you’re on the correct VN. Check the box, “Delete public IP and NIC…” “Review + Create”. Once validated, “Create”. 
 
-<h4>Now that we’ve created our 2 machines, we’re going to set our Client’s DNS to our Server’s private IP address.</h4>
+<h4>Now that we’ve created our two machines, we’re going to set our Client’s <i>DNS</i> to our Server’s private IP address.</h4>
 
 - Find the Server’s private IP address from the VM’s main page in Azure and copy it. 
 
@@ -133,13 +132,13 @@ If it passes Validation, choose “Create”.
 
 <h4>To see if we were successful, let’s login to our Client VM and attempt to “ping” the server’s private IP. </h4>
 
-- From the Azure portal, restart our Client VM. To do this, open the Client’s main page in Azure; at the top you’ll see a series of options running horizontally. Choose “Restart”. 
+- From the Azure portal, <i>restart</i> our Client VM. To do this, open the Client’s main page in Azure; at the top you’ll see a series of options running horizontally. Choose “Restart”. 
 
 ![Part3_4 READY](https://github.com/user-attachments/assets/ed367d09-d5a9-4643-a0fe-9cd51aeb309d)
 
 - Next, login to the Client VM using RDP (get the client's public IP from it's dashboard, just as you did with the server's IP). You’ll have to choose a few set-up options since it’s our first login to this new machine. 
 
-- Once inside, open “PowerShell” as the administrator. Search “powershell” in the search box. Right-click on PowerShell in the search results and choose “Run as administrator”. 
+- Once inside, open “PowerShell” as the <i>administrator</i>. Search “powershell” in the search box. Right-click on PowerShell in the search results and choose “Run as administrator”. 
 
 - Once PowerShell opens, attempt to “ping” the Server’s private IP. Type “ping [server’s private IP]” and press “Enter”. Ensure the ping is successful. 
 
@@ -147,6 +146,6 @@ If it passes Validation, choose “Create”.
 
 ![Part3_5 READY](https://github.com/user-attachments/assets/e4f34912-a3b6-4518-a802-cf1a793c891b)
 
-<p><b></b>Congratulations on setting up your first Virtual Network.</b></p>
+<p><b></b>Congratulations on setting up your first Virtual Network!</b></p>
 
 <br />
