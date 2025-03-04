@@ -1,6 +1,6 @@
-# azure-intro-vm-setup
 <p align="center">
-<img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
+![!Prog1_Logo](https://github.com/user-attachments/assets/a786492b-5687-4d1e-84fe-6b1aaf04397f)
+
 </p>
 
 <h1>Deploying and Configuring Active Directory </h1>
